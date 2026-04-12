@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Oluwatosin Ebenezer Akinpelu — Brand Strategist & Creative Entrepreneur</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --gold: #C9A84C; --gold-light: #F0D896; --gold-dim: rgba(201,168,76,0.15);
+  --ink: #0D0D0D; --ink-mid: #111111; --surface: #F9F6F0; --surface-alt: #F2EDE3;
+  --muted: #6B6355; --border-gold: rgba(201,168,76,0.25); --border-light: rgba(201,168,76,0.1);
+  --white: #FFFFFF; --green: #1D6B4A;
+}
+html { scroll-behavior: smooth; }
+body { font-family: 'DM Sans', sans-serif; background: var(--ink); color: var(--white); line-height: 1.7; overflow-x: hidden; }
+
+/* NAV */
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1.1rem 4rem; background: rgba(13,13,13,0.96); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border-gold); }
+.nav-logo { font-family: 'Playfair Display', serif; font-size: 1rem; color: var(--gold); text-decoration: none; letter-spacing: 0.04em; }
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links a { font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s; }
+.nav-links a:hover { color: var(--gold); }
+.nav-cta { padding: 0.55rem 1.4rem; border: 1px solid var(--gold); color: var(--gold); font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; transition: all 0.2s; }
+.nav-cta:hover { background: var(--gold); color: var(--ink); }
+
+/* HERO */
+.hero-wrap { background: var(--ink); padding: 9rem 4rem 5rem; }
+.hero { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 400px; gap: 5rem; align-items: center; }
+.hero-eyebrow { display: inline-flex; align-items: center; gap: 0.75rem; font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; }
+.hero-eyebrow::before { content: ''; display: block; width: 2rem; height: 1px; background: var(--gold); }
+.hero-name { font-family: 'Playfair Display', serif; font-size: clamp(2.8rem, 6vw, 5.2rem); font-weight: 900; line-height: 1.05; letter-spacing: -0.02em; margin-bottom: 0.6rem; }
+.hero-name span { color: var(--gold); }
+.hero-role { font-size: 0.97rem; font-weight: 300; color: rgba(255,255,255,0.4); margin-bottom: 1.8rem; letter-spacing: 0.04em; }
+.hero-desc { font-size: 0.96rem; color: rgba(255,255,255,0.66); line-height: 1.85; margin-bottom: 2rem; border-left: 2px solid var(--gold); padding-left: 1.2rem; }
+.hero-tools { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 2.2rem; }
+.tool-tag { font-size: 0.68rem; padding: 0.28rem 0.65rem; border: 1px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.35); letter-spacing: 0.06em; }
+.hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
+.btn-gold { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.85rem 1.8rem; background: var(--gold); color: var(--ink); font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; transition: all 0.2s; }
+.btn-gold:hover { background: var(--gold-light); transform: translateY(-2px); }
+.btn-ghost { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.85rem 1.8rem; border: 1px solid rgba(255,255,255,0.22); color: rgba(255,255,255,0.65); font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; transition: all 0.2s; }
+.btn-ghost:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
+
+/* PHOTO */
+.hero-photo-wrap { position: relative; }
+.hero-photo-frame { width: 100%; aspect-ratio: 3/4; background: linear-gradient(145deg, rgba(201,168,76,0.1), rgba(201,168,76,0.02)); border: 1px solid var(--border-gold); display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 0.75rem; overflow: hidden; }
+.hero-photo-frame img { width: 100%; height: 100%; object-fit: cover; }
+.photo-initials { font-family: 'Playfair Display', serif; font-size: 5rem; font-weight: 900; color: var(--gold); opacity: 0.18; line-height: 1; }
+.photo-hint { font-size: 0.65rem; color: rgba(255,255,255,0.18); letter-spacing: 0.12em; text-transform: uppercase; }
+.photo-badge { position: absolute; bottom: 1.5rem; left: -1rem; background: var(--gold); color: var(--ink); padding: 0.7rem 1.1rem; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.04em; line-height: 1.5; }
+.hero-photo-wrap::after { content: ''; position: absolute; top: 1rem; left: 1rem; right: -1rem; bottom: -1rem; border: 1px solid var(--border-light); z-index: -1; }
+
+/* STATS */
+.stats-strip { background: var(--surface-alt); border-top: 1px solid var(--border-gold); border-bottom: 1px solid var(--border-gold); }
+.stats-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(5,1fr); }
+.stat { padding: 1.8rem 1rem; text-align: center; border-right: 1px solid rgba(201,168,76,0.15); }
+.stat:last-child { border-right: none; }
+.stat-n { font-family: 'Playfair Display', serif; font-size: 2.2rem; font-weight: 700; color: var(--gold); line-height: 1; display: block; }
+.stat-l { font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-top: 0.3rem; display: block; }
+
+/* SHARED */
+section { padding: 5.5rem 4rem; }
+.sec-inner { max-width: 1200px; margin: 0 auto; }
+.sec-tag { font-size: 0.67rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.6rem; display: block; }
+.sec-h { font-family: 'Playfair Display', serif; font-size: clamp(1.7rem, 3.5vw, 2.5rem); font-weight: 700; line-height: 1.15; margin-bottom: 0.75rem; }
+.sec-h.dark { color: var(--ink); } .sec-h.light { color: var(--white); }
+.sec-sub { font-size: 0.95rem; line-height: 1.8; max-width: 480px; }
+.sec-sub.dark { color: var(--muted); } .sec-sub.light { color: rgba(255,255,255,0.48); }
+
+/* ABOUT */
+.about { background: var(--surface); }
+.about-grid { display: grid; grid-template-columns: 1fr 1.6fr; gap: 5rem; align-items: start; margin-top: 3.5rem; }
+.about-img-frame { width: 100%; aspect-ratio: 3/4; background: linear-gradient(145deg, rgba(201,168,76,0.12), rgba(201,168,76,0.02)); border: 1px solid var(--border-gold); display: flex; align-items: center; justify-content: center; overflow: hidden; position: relative; }
+.about-img-frame img { width: 100%; height: 100%; object-fit: cover; }
+.about-initials-big { font-family: 'Playfair Display', serif; font-size: 6rem; font-weight: 900; color: var(--gold); opacity: 0.14; }
+.about-cert { position: absolute; bottom: -1rem; right: -1rem; background: var(--gold); color: var(--ink); padding: 0.85rem 1rem; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.04em; line-height: 1.55; text-align: center; }
+.about-p { font-size: 0.95rem; color: var(--muted); line-height: 1.9; margin-bottom: 1.2rem; }
+.skills-wrap { margin-top: 2rem; display: grid; grid-template-columns: 1fr 1fr; }
+.skill-row { display: flex; align-items: center; gap: 0.6rem; font-size: 0.82rem; color: var(--ink); padding: 0.5rem 0; border-bottom: 1px solid var(--surface-alt); }
+.skill-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--gold); flex-shrink: 0; }
+
+/* WORK */
+.work { background: #0f0f0f; }
+.work-header { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 3rem; flex-wrap: wrap; gap: 1rem; }
+.behance-link { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); text-decoration: none; border-bottom: 1px solid rgba(201,168,76,0.3); padding-bottom: 2px; }
+.behance-link:hover { border-color: var(--gold); }
+.projects-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; }
+.project-card { background: #141410; position: relative; overflow: hidden; display: block; text-decoration: none; }
+.proj-thumb { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; transition: transform 0.4s ease; }
+.project-card:hover .proj-thumb { transform: scale(1.05); }
+.proj-fallback { width: 100%; aspect-ratio: 4/3; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.5rem; background: #1a1a14; transition: background 0.2s; }
+.project-card:hover .proj-fallback { background: #1e1e17; }
+.proj-fallback-icon { font-size: 1.8rem; opacity: 0.18; }
+.proj-fallback-label { font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.12); }
+.proj-overlay { position: absolute; bottom: 0; left: 0; right: 0; padding: 1.4rem; background: linear-gradient(to top, rgba(10,10,8,0.96) 0%, transparent 100%); }
+.proj-cat { font-size: 0.6rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.3rem; display: block; }
+.proj-name { font-size: 0.9rem; font-weight: 500; color: var(--white); margin-bottom: 0.2rem; }
+.proj-tools-text { font-size: 0.7rem; color: rgba(255,255,255,0.3); }
+
+/* FEATURED */
+.featured { background: var(--surface); }
+.feat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4.5rem; align-items: center; margin-top: 3.5rem; }
+.feat-img-wrap { position: relative; }
+.feat-badge-top { position: absolute; top: -0.8rem; left: 1.5rem; background: var(--green); color: white; font-size: 0.62rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; padding: 0.3rem 0.85rem; z-index: 2; }
+.feat-img { width: 100%; aspect-ratio: 1/1; overflow: hidden; border: 1px solid rgba(29,107,74,0.2); }
+.feat-img img { width: 100%; height: 100%; object-fit: cover; }
+.feat-tag { font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--green); margin-bottom: 0.6rem; display: block; }
+.feat-h { font-family: 'Playfair Display', serif; font-size: 1.85rem; font-weight: 700; color: var(--ink); margin-bottom: 1rem; line-height: 1.2; }
+.feat-p { font-size: 0.93rem; color: var(--muted); line-height: 1.85; margin-bottom: 1.25rem; }
+.feat-list { list-style: none; display: flex; flex-direction: column; gap: 0.45rem; margin-bottom: 2rem; }
+.feat-list li { font-size: 0.84rem; color: var(--muted); display: flex; align-items: center; gap: 0.6rem; }
+.feat-list li::before { content: '→'; color: var(--green); font-size: 0.72rem; flex-shrink: 0; }
+.feat-cta { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--green); text-decoration: none; border-bottom: 1px solid rgba(29,107,74,0.3); padding-bottom: 2px; }
+
+/* SERVICES */
+.services { background: var(--ink); }
+.svc-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: rgba(201,168,76,0.06); margin-top: 3.5rem; }
+.svc-card { background: #0e0e0b; padding: 2rem; transition: background 0.2s; }
+.svc-card:hover { background: #131310; }
+.svc-num { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 900; color: rgba(201,168,76,0.1); line-height: 1; margin-bottom: 1rem; }
+.svc-name { font-size: 0.93rem; font-weight: 600; color: var(--white); margin-bottom: 0.6rem; }
+.svc-desc { font-size: 0.83rem; color: rgba(255,255,255,0.38); line-height: 1.75; margin-bottom: 1.2rem; }
+.svc-list { list-style: none; display: flex; flex-direction: column; gap: 0.35rem; }
+.svc-list li { font-size: 0.77rem; color: rgba(255,255,255,0.28); padding-left: 1rem; position: relative; }
+.svc-list li::before { content: '→'; position: absolute; left: 0; color: var(--gold); font-size: 0.65rem; }
+.svc-tool { margin-top: 1.2rem; padding-top: 0.9rem; border-top: 1px solid rgba(255,255,255,0.04); font-size: 0.65rem; color: rgba(201,168,76,0.45); letter-spacing: 0.08em; }
+
+/* VENTURES */
+.ventures { background: var(--surface); }
+.vent-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 1.5rem; margin-top: 3.5rem; }
+.vent-card { padding: 2.2rem; background: var(--white); border: 1px solid rgba(201,168,76,0.2); position: relative; overflow: hidden; transition: transform 0.2s, box-shadow 0.2s; }
+.vent-card:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(201,168,76,0.1); }
+.vent-card::before { content: attr(data-n); position: absolute; top: 1rem; right: 1.5rem; font-family: 'Playfair Display', serif; font-size: 3.5rem; font-weight: 900; color: rgba(201,168,76,0.07); line-height: 1; }
+.vent-icon { font-size: 1.3rem; margin-bottom: 0.9rem; }
+.vent-name { font-family: 'Playfair Display', serif; font-size: 1.18rem; font-weight: 700; color: var(--ink); margin-bottom: 0.3rem; }
+.vent-type { font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.85rem; display: block; }
+.vent-desc { font-size: 0.86rem; color: var(--muted); line-height: 1.75; margin-bottom: 1rem; }
+.vent-tags { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+.vtag { font-size: 0.65rem; padding: 0.22rem 0.55rem; border: 1px solid rgba(13,13,13,0.11); color: var(--muted); }
+
+/* CONTACT */
+.contact { background: var(--gold); padding: 5.5rem 4rem; }
+.contact-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+.contact-h { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 900; color: var(--ink); line-height: 1.1; margin-bottom: 1rem; }
+.contact-sub { font-size: 0.95rem; color: rgba(13,13,13,0.58); line-height: 1.85; }
+.contact-items { display: flex; flex-direction: column; gap: 0.75rem; }
+.contact-item { display: flex; align-items: center; gap: 1rem; padding: 1rem 1.3rem; background: rgba(13,13,13,0.07); text-decoration: none; transition: background 0.2s; }
+.contact-item:hover { background: rgba(13,13,13,0.14); }
+.ci-icon { font-size: 1rem; flex-shrink: 0; }
+.ci-label { font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(13,13,13,0.42); display: block; }
+.ci-value { font-size: 0.9rem; font-weight: 500; color: var(--ink); }
+
+/* FOOTER */
+footer { background: var(--ink); padding: 1.8rem 4rem; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid rgba(255,255,255,0.05); }
+.footer-logo { font-family: 'Playfair Display', serif; font-size: 0.92rem; color: var(--gold); text-decoration: none; }
+.footer-links { display: flex; gap: 1.5rem; }
+.footer-links a { font-size: 0.7rem; color: rgba(255,255,255,0.22); text-decoration: none; letter-spacing: 0.06em; transition: color 0.2s; }
+.footer-links a:hover { color: var(--gold); }
+.footer-copy { font-size: 0.7rem; color: rgba(255,255,255,0.18); }
+
+/* RESPONSIVE */
+@media (max-width: 960px) {
+  nav { padding: 1rem 1.5rem; } .nav-links, .nav-cta { display: none; }
+  .hero-wrap { padding: 7rem 1.5rem 3rem; }
+  .hero { grid-template-columns: 1fr; } .hero-photo-wrap { display: none; }
+  section { padding: 4rem 1.5rem; }
+  .about-grid { grid-template-columns: 1fr; gap: 2rem; } .about-img-wrap { display: none; }
+  .projects-grid { grid-template-columns: repeat(2,1fr); }
+  .feat-grid { grid-template-columns: 1fr; }
+  .svc-grid { grid-template-columns: 1fr; }
+  .vent-grid { grid-template-columns: 1fr; }
+  .stats-inner { grid-template-columns: repeat(3,1fr); }
+  .contact-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+  footer { flex-direction: column; gap: 0.6rem; text-align: center; }
+}
+@keyframes fadeUp { from { opacity:0; transform:translateY(18px); } to { opacity:1; transform:translateY(0); } }
+.hero-eyebrow { animation: fadeUp 0.5s ease both; }
+.hero-name { animation: fadeUp 0.5s 0.1s ease both; }
+.hero-role { animation: fadeUp 0.5s 0.18s ease both; }
+.hero-desc { animation: fadeUp 0.5s 0.26s ease both; }
+.hero-tools { animation: fadeUp 0.5s 0.32s ease both; }
+.hero-cta { animation: fadeUp 0.5s 0.38s ease both; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo">OEA</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#ventures">Ventures</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Hire Me</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero-wrap">
+  <div class="hero">
+    <div>
+      <div class="hero-eyebrow">Nigeria — Available Worldwide</div>
+      <h1 class="hero-name">Oluwatosin<br><span>Ebenezer</span><br>Akinpelu</h1>
+      <p class="hero-role">Brand Strategist · Creative Director · Operations Leader</p>
+      <p class="hero-desc">I help businesses and startups build powerful brand identities, grow their social media presence, and create digital products that actually work — from logo to launch, concept to campaign.</p>
+      <div class="hero-tools">
+        <span class="tool-tag">Adobe Photoshop</span><span class="tool-tag">Illustrator</span>
+        <span class="tool-tag">InDesign</span><span class="tool-tag">Hootsuite</span>
+        <span class="tool-tag">SocialBu</span><span class="tool-tag">Meta Ads Manager</span>
+        <span class="tool-tag">Figma</span><span class="tool-tag">UI/UX · 3MTT Certified</span>
+      </div>
+      <div class="hero-cta">
+        <a href="#work" class="btn-gold">View My Work →</a>
+        <a href="#contact" class="btn-ghost">Let's Collaborate</a>
+      </div>
+    </div>
+    <div class="hero-photo-wrap">
+      <div class="hero-photo-frame">
+        <!--
+          TO ADD YOUR PHOTO:
+          Replace the lines below with:
+          <img src="your-photo.jpg" alt="Oluwatosin Akinpelu" style="width:100%;height:100%;object-fit:cover;">
+        -->
+        <span class="photo-initials">OEA</span>
+        <span class="photo-hint">Upload your photo here</span>
+      </div>
+      <div class="photo-badge">5+ Years<br>Experience</div>
+    </div>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats-strip">
+  <div class="stats-inner">
+    <div class="stat"><span class="stat-n">5+</span><span class="stat-l">Years Experience</span></div>
+    <div class="stat"><span class="stat-n">4</span><span class="stat-l">Active Ventures</span></div>
+    <div class="stat"><span class="stat-n">6</span><span class="stat-l">Core Services</span></div>
+    <div class="stat"><span class="stat-n">637+</span><span class="stat-l">Portfolio Views</span></div>
+    <div class="stat"><span class="stat-n">∞</span><span class="stat-l">Ideas in Motion</span></div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="sec-inner">
+    <span class="sec-tag">Who I Am</span>
+    <h2 class="sec-h dark">A Builder. A Strategist.<br>A Creative Operator.</h2>
+    <div class="about-grid">
+      <div style="position:relative;">
+        <div class="about-img-frame">
+          <!--
+            TO ADD YOUR PHOTO HERE TOO:
+            <img src="your-photo.jpg" alt="Oluwatosin Akinpelu">
+          -->
+          <span class="about-initials-big">OEA</span>
+        </div>
+        <div class="about-cert">3MTT Certified<br>UI/UX Designer<br>Nigeria</div>
+      </div>
+      <div>
+        <p class="about-p">I'm Oluwatosin Ebenezer Akinpelu — a multi-disciplinary creative entrepreneur, brand strategist, and operations professional based in Nigeria, with over 5 years of experience building brands, media systems, and business structures that scale.</p>
+        <p class="about-p">I specialize in brand identity design, social media management, digital marketing, UI/UX product design, and business strategy — working across startups, SMEs, NGOs, and media organizations globally.</p>
+        <p class="about-p">Currently serving as Head of Operations & Design Lead at Passionate Haven Media Communication Ltd, and Founder of Manjay Protech & Media. My work sits at the intersection of strategy and execution — I don't just design, I build systems, manage communities, tell brand stories, and create experiences that drive real results.</p>
+        <div class="skills-wrap">
+          <div class="skill-row"><span class="skill-dot"></span>Brand Identity & Strategy</div>
+          <div class="skill-row"><span class="skill-dot"></span>Social Media Management</div>
+          <div class="skill-row"><span class="skill-dot"></span>UI/UX Design (3MTT Certified)</div>
+          <div class="skill-row"><span class="skill-dot"></span>Meta Ads & Paid Advertising</div>
+          <div class="skill-row"><span class="skill-dot"></span>Adobe Creative Suite</div>
+          <div class="skill-row"><span class="skill-dot"></span>Business Writing & Proposals</div>
+          <div class="skill-row"><span class="skill-dot"></span>Operations & SOP Design</div>
+          <div class="skill-row"><span class="skill-dot"></span>Startup Consulting</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WORK -->
+<section class="work" id="work">
+  <div class="sec-inner">
+    <div class="work-header">
+      <div>
+        <span class="sec-tag">Portfolio</span>
+        <h2 class="sec-h light">Selected Works</h2>
+      </div>
+      <a href="https://www.behance.net/itz-manjay" target="_blank" class="behance-link">View All on Behance ↗</a>
+    </div>
+    <div class="projects-grid">
+
+      <a class="project-card" href="https://www.behance.net/gallery/229395245/NGO-Brandiing-HULDAH-Cares" target="_blank">
+        <img class="proj-thumb" src="https://mir-s3-cdn-cf.behance.net/projects/404/56c0a4229395245.Y3JvcCwyODc2LDIyNTAsNjQsMA.jpg" alt="Huldah Cares NGO Branding"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+        <div class="proj-fallback" style="display:none;"><span class="proj-fallback-icon">❤️</span><span class="proj-fallback-label">NGO Branding</span></div>
+        <div class="proj-overlay">
+          <span class="proj-cat">Brand Identity · NGO · Social Impact</span>
+          <div class="proj-name">Huldah Cares Initiative — Brand Identity</div>
+          <div class="proj-tools-text">Photoshop · Illustrator · Brand Strategy</div>
+        </div>
+      </a>
+
+      <a class="project-card" href="https://www.behance.net/gallery/213440165/STUDENT-ACADEMIC-INFORMATION-MANAGEMENT-APP-UIUX" target="_blank">
+        <img class="proj-thumb" src="https://mir-s3-cdn-cf.behance.net/projects/404/0a7373213440165.Y3JvcCwxMDQ0LDgxNywxNzgsMA.jpg" alt="Student App UI/UX"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+        <div class="proj-fallback" style="display:none;"><span class="proj-fallback-icon">📱</span><span class="proj-fallback-label">UI/UX Design</span></div>
+        <div class="proj-overlay">
+          <span class="proj-cat">UI/UX Design · Mobile App</span>
+          <div class="proj-name">EduTrack — Student Academic Management App</div>
+          <div class="proj-tools-text">Figma · UI/UX Design · Product Thinking</div>
+        </div>
+      </a>
+
+      <a class="project-card" href="https://www.behance.net/gallery/241052195/CHRISTMAS-FLYER-DESIGN" target="_blank">
+        <img class="proj-thumb" src="https://mir-s3-cdn-cf.behance.net/projects/404/f1f4c2241052195.Y3JvcCwxMDgwLDg0NCwwLDI1MQ.png" alt="Christmas Flyer"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+        <div class="proj-fallback" style="display:none;"><span class="proj-fallback-icon">🎄</span><span class="proj-fallback-label">Campaign Design</span></div>
+        <div class="proj-overlay">
+          <span class="proj-cat">Campaign Design · Festive</span>
+          <div class="proj-name">Festive Brand Campaign — Christmas Flyer</div>
+          <div class="proj-tools-text">Photoshop · Illustrator</div>
+        </div>
+      </a>
+
+      <a class="project-card" href="https://www.behance.net/gallery/212620473/Convocation-flyer-design" target="_blank">
+        <img class="proj-thumb" src="https://mir-s3-cdn-cf.behance.net/projects/404/a98a66212620473.Y3JvcCwxMDgwLDg0NCwwLDE3Ng.jpg" alt="Convocation Flyer"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+        <div class="proj-fallback" style="display:none;"><span class="proj-fallback-icon">🎓</span><span class="proj-fallback-label">Event Design</span></div>
+        <div class="proj-overlay">
+          <span class="proj-cat">Print Design · Event</span>
+          <div class="proj-name">Convocation Invitation — Flyer Design</div>
+          <div class="proj-tools-text">Photoshop · InDesign · Print Design</div>
+        </div>
+      </a>
+
+      <a class="project-card" href="https://www.behance.net/gallery/199601997/BIRTHDAY-FLYER-DESIGN" target="_blank">
+        <img class="proj-thumb" src="https://mir-s3-cdn-cf.behance.net/projects/404/e43d0a199601997.Y3JvcCwxOTk5LDE1NjQsMCww.jpg" alt="Birthday Flyer"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+        <div class="proj-fallback" style="display:none;"><span class="proj-fallback-icon">🎉</span><span class="proj-fallback-label">Flyer Design</span></div>
+        <div class="proj-overlay">
+          <span class="proj-cat">Graphic Design · Celebration</span>
+          <div class="proj-name">Birthday Event — Flyer Design Collection</div>
+          <div class="proj-tools-text">Photoshop · Illustrator</div>
+        </div>
+      </a>
+
+      <a class="project-card" href="https://www.behance.net/gallery/190031795/Funeral-Poster-Design" target="_blank">
+        <img class="proj-thumb" src="https://mir-s3-cdn-cf.behance.net/projects/404/8cdb5c190031795.Y3JvcCwxMDgwLDg0NCwwLDA.png" alt="Memorial Poster"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+        <div class="proj-fallback" style="display:none;"><span class="proj-fallback-icon">🕊️</span><span class="proj-fallback-label">Poster Design</span></div>
+        <div class="proj-overlay">
+          <span class="proj-cat">Print Design · Memorial</span>
+          <div class="proj-name">Memorial Tribute — Poster Design</div>
+          <div class="proj-tools-text">Photoshop · InDesign</div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED CASE STUDY -->
+<section class="featured" id="featured">
+  <div class="sec-inner">
+    <span class="sec-tag">Featured Project</span>
+    <h2 class="sec-h dark">Deep Dive — NGO Brand Identity<br>for Huldah Cares</h2>
+    <div class="feat-grid">
+      <div class="feat-img-wrap">
+        <div class="feat-badge-top">Most Viewed Project</div>
+        <div class="feat-img">
+          <img src="https://mir-s3-cdn-cf.behance.net/projects/404/56c0a4229395245.Y3JvcCwyODc2LDIyNTAsNjQsMA.jpg" alt="Huldah Cares Brand Identity" />
+        </div>
+      </div>
+      <div>
+        <span class="feat-tag">Brand Identity · NGO · Social Impact</span>
+        <h3 class="feat-h">Huldah Cares Initiative — Full Brand Identity</h3>
+        <p class="feat-p">Developed a complete brand identity system for Huldah Cares Initiative — a nonprofit focused on intellectual disability awareness, inclusivity education, and community advocacy across Nigeria.</p>
+        <p class="feat-p">The brief required a brand that felt warm, trustworthy, and impactful — communicating hope and advocacy without feeling clinical or corporate. The result was a cohesive visual system used across print, digital, and social media.</p>
+        <ul class="feat-list">
+          <li>Logo design & brand mark</li>
+          <li>Color palette & typography system</li>
+          <li>Brand guidelines document</li>
+          <li>Social media visual templates</li>
+          <li>Print collateral & poster design</li>
+        </ul>
+        <a href="https://www.behance.net/gallery/229395245/NGO-Brandiing-HULDAH-Cares" target="_blank" class="feat-cta">View Full Project on Behance ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="sec-inner">
+    <span class="sec-tag">What I Offer</span>
+    <h2 class="sec-h light">Services Built<br>for Results.</h2>
+    <div class="svc-grid">
+      <div class="svc-card">
+        <div class="svc-num">01</div>
+        <div class="svc-name">Brand Identity & Strategy</div>
+        <p class="svc-desc">End-to-end brand development from naming to full visual identity systems.</p>
+        <ul class="svc-list"><li>Logo design + full brand kit</li><li>Brand positioning & messaging</li><li>Brand guidelines document</li><li>Competitive brand analysis</li></ul>
+        <div class="svc-tool">Photoshop · Illustrator · InDesign</div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-num">02</div>
+        <div class="svc-name">Social Media Management</div>
+        <p class="svc-desc">Strategic content planning, scheduling, and community management to grow your brand.</p>
+        <ul class="svc-list"><li>Content calendar & strategy</li><li>Post creation & scheduling</li><li>Community engagement</li><li>Monthly performance reports</li></ul>
+        <div class="svc-tool">SocialBu · Hootsuite · Canva</div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-num">03</div>
+        <div class="svc-name">Meta Ads & Digital Marketing</div>
+        <p class="svc-desc">Paid advertising campaigns on Facebook & Instagram designed to drive real leads.</p>
+        <ul class="svc-list"><li>Meta Ads setup & management</li><li>Audience targeting & retargeting</li><li>Ad creative design</li><li>Performance tracking & optimization</li></ul>
+        <div class="svc-tool">Meta Ads Manager · Analytics</div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-num">04</div>
+        <div class="svc-name">UI/UX & Product Design</div>
+        <p class="svc-desc">User-centered digital product design with focus on African/Nigerian user contexts.</p>
+        <ul class="svc-list"><li>App flows & wireframes</li><li>UI design & prototyping</li><li>UX audit & recommendations</li><li>Design system creation</li></ul>
+        <div class="svc-tool">Figma · Adobe XD</div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-num">05</div>
+        <div class="svc-name">Business Writing & Consulting</div>
+        <p class="svc-desc">Professional business documentation and startup advisory for growth and funding.</p>
+        <ul class="svc-list"><li>Business plans & proposals</li><li>Pitch decks & investor documents</li><li>Startup structuring & SOPs</li><li>Funding document preparation</li></ul>
+        <div class="svc-tool">MS Office · Google Suite</div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-num">06</div>
+        <div class="svc-name">Operations & Systems Design</div>
+        <p class="svc-desc">Building the internal systems and team structures that allow organizations to scale.</p>
+        <ul class="svc-list"><li>SOP development</li><li>Team structure & role design</li><li>Workflow & process design</li><li>Organizational frameworks</li></ul>
+        <div class="svc-tool">Notion · Trello · Google Suite</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VENTURES -->
+<section class="ventures" id="ventures">
+  <div class="sec-inner">
+    <span class="sec-tag">Active Ventures</span>
+    <h2 class="sec-h dark">Building Ecosystems,<br>Not Just Businesses.</h2>
+    <p class="sec-sub dark">Four distinct ventures. One unified vision.</p>
+    <div class="vent-grid">
+      <div class="vent-card" data-n="01">
+        <div class="vent-icon">🏢</div>
+        <div class="vent-name">Manjay Protech & Media</div>
+        <span class="vent-type">Creative & Technology Company · Founder</span>
+        <p class="vent-desc">A multi-division agency delivering digital marketing, branding, UI/UX, media production, web development, and training — with dedicated Manjay Studios and Manjay Academy divisions.</p>
+        <div class="vent-tags"><span class="vtag">Digital Marketing</span><span class="vtag">Branding</span><span class="vtag">UI/UX</span><span class="vtag">Media</span><span class="vtag">Academy</span></div>
+      </div>
+      <div class="vent-card" data-n="02">
+        <div class="vent-icon">📡</div>
+        <div class="vent-name">Passionate Haven Media</div>
+        <span class="vent-type">Media Communication Ltd · Head of Operations</span>
+        <p class="vent-desc">Serving as Head of Operations and Design Lead — responsible for SOP development, brand execution, team structuring, and media production planning across all company projects.</p>
+        <div class="vent-tags"><span class="vtag">Operations</span><span class="vtag">Design Lead</span><span class="vtag">PMO</span><span class="vtag">Brand Execution</span></div>
+      </div>
+      <div class="vent-card" data-n="03">
+        <div class="vent-icon">🌿</div>
+        <div class="vent-name">Dokky Farms</div>
+        <span class="vent-type">Agricultural Startup · Founder</span>
+        <p class="vent-desc">A sustainable agribusiness startup focused on rabbit farming, smoked rabbit meat production, and live rabbit sales — with active plans to diversify into a broader agricultural supply chain.</p>
+        <div class="vent-tags"><span class="vtag">Cuniculture</span><span class="vtag">Food Production</span><span class="vtag">Supply Chain</span><span class="vtag">Agribusiness</span></div>
+      </div>
+      <div class="vent-card" data-n="04">
+        <div class="vent-icon">❤️</div>
+        <div class="vent-name">Huldah Cares Initiative</div>
+        <span class="vent-type">Social Impact Brand · Creative Director</span>
+        <p class="vent-desc">A nonprofit-aligned initiative championing awareness for intellectual disabilities, inclusive education, advocacy storytelling, and community support for vulnerable populations.</p>
+        <div class="vent-tags"><span class="vtag">Disability Advocacy</span><span class="vtag">Inclusivity</span><span class="vtag">Storytelling</span><span class="vtag">Community</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <div>
+      <h2 class="contact-h">Let's Build<br>Something<br>Remarkable.</h2>
+      <p class="contact-sub">Whether you need a brand built from scratch, social media managed professionally, a business structured for scale, or a digital product designed — I'm ready. Let's talk.</p>
+    </div>
+    <div class="contact-items">
+      <a href="mailto:akinpeluebenezer@gmail.com" class="contact-item">
+        <span class="ci-icon">✉️</span>
+        <div><span class="ci-label">Email</span><span class="ci-value">akinpeluebenezer@gmail.com</span></div>
+      </a>
+      <a href="https://www.behance.net/itz-manjay" target="_blank" class="contact-item">
+        <span class="ci-icon">🎨</span>
+        <div><span class="ci-label">Behance Portfolio</span><span class="ci-value">behance.net/itz-manjay</span></div>
+      </a>
+      <a href="https://www.linkedin.com/in/oluwatosinakinpelue" target="_blank" class="contact-item">
+        <span class="ci-icon">💼</span>
+        <div><span class="ci-label">LinkedIn</span><span class="ci-value">linkedin.com/in/oluwatosinakinpelue</span></div>
+      </a>
+      <a href="https://linktr.ee/itz_manjay" target="_blank" class="contact-item">
+        <span class="ci-icon">🔗</span>
+        <div><span class="ci-label">All Social Links</span><span class="ci-value">linktr.ee/itz_manjay</span></div>
+      </a>
+      <a href="#" class="contact-item">
+        <span class="ci-icon">📍</span>
+        <div><span class="ci-label">Location</span><span class="ci-value">Nigeria · Available Remotely Worldwide</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <a href="#" class="footer-logo">Oluwatosin Ebenezer Akinpelu</a>
+  <div class="footer-links">
+    <a href="https://www.behance.net/itz-manjay" target="_blank">Behance</a>
+    <a href="https://www.linkedin.com/in/oluwatosinakinpelue" target="_blank">LinkedIn</a>
+    <a href="https://instagram.com/itz_manjay" target="_blank">Instagram</a>
+    <a href="https://linktr.ee/itz_manjay" target="_blank">Linktree</a>
+  </div>
+  <span class="footer-copy">© 2025 · Manjay Protech & Media</span>
+</footer>
+
+</body>
+</html>
